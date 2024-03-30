@@ -6,12 +6,12 @@ public class WeaponPickup : MonoBehaviour
 {
     public GameObject weaponOnGround; // 地图上的武器
     public GameObject weaponInHand; // 主角手中的武器
-    public GameObject pickupText; // 提示文字的UI对象
+     // 提示文字的UI对象
 
     void Start()
     {
         weaponInHand.SetActive(false); // 确保游戏开始时主角手中的武器是隐藏的
-        pickupText.SetActive(false); // 确保游戏开始时拾取提示也是隐藏的
+         // 确保游戏开始时拾取提示也是隐藏的
     }
 
     // 当玩家进入触发区域时显示提示
@@ -19,7 +19,7 @@ public class WeaponPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            pickupText.SetActive(true);
+            
         }
     }
 
@@ -28,7 +28,7 @@ public class WeaponPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            pickupText.SetActive(false);
+            
         }
     }
 
@@ -39,7 +39,7 @@ public class WeaponPickup : MonoBehaviour
         {
             weaponOnGround.SetActive(false); // 隐藏地图上的武器
             weaponInHand.SetActive(true); // 显示主角手中的武器
-            pickupText.SetActive(false); // 拾取后隐藏提示文字
+            
         }
     }
 }
