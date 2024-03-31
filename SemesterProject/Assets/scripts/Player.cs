@@ -6,12 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     public int maxHealth = 100; // 主角的最大健康值
     private int currentHealth; // 主角的当前健康值
-    private Animator animator; // 引用Animator组件
+    public Animator animator; // 引用Animator组件
+    private PlayerMovementControl PlayerMovementControl;
 
     void Start()
     {
         currentHealth = maxHealth; // 初始化时，主角的当前健康值等于最大健康值
         animator = GetComponent<Animator>(); // 获取Animator组件
+
+        PlayerMovementControl = GetComponent<PlayerMovementControl>();
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     void Update()
@@ -22,10 +29,9 @@ public class PlayerController : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Run();
-        }
+        animator.SetFloat("Speed", PlayerMovementControl.CurrentSpeed());
+        animator.SetBool("IsRunning", PlayerMovementControl.IsRunning());
+
 
         // 添加更多按键检测来触发其他行为和动画
     }
@@ -46,10 +52,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Attack"); // 触发攻击动画
     }
 
-    void Run()
-    {
-        animator.SetTrigger("Run"); // 触发跑步动画
-    }
 
     // 添加其他行为的方法，例如Walk()和Die()
 

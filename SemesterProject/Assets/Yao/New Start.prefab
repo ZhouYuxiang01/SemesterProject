@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6496890715165938222}
   - component: {fileID: 2979144445975876676}
-  - component: {fileID: 8284999964793239873}
   - component: {fileID: 1175002827885530849}
   m_Layer: 0
   m_Name: New Start
@@ -62,22 +61,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8284999964793239873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5666191597506623561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934480ed8fee3c44687fbdec88935bc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 6
-  characterAnimator: {fileID: 9190217424698762836}
-  cameraTransform: {fileID: 0}
 --- !u!114 &1175002827885530849
 MonoBehaviour:
   m_ObjectHideFlags: 0
