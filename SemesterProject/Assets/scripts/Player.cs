@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour
             Attack();
         }
 
-        animator.SetFloat("Speed", PlayerMovementControl.CurrentSpeed());
-        animator.SetBool("IsRunning", PlayerMovementControl.IsRunning());
-
 
         // 添加更多按键检测来触发其他行为和动画
     }

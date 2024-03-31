@@ -6,6 +6,7 @@ public class PlayerAnimatoControll : MonoBehaviour
 {
     public Animator animator;
     private PlayerMovementControl PlayerMovementControl;
+    private PlayerController PlayerController;
 
     private void Start()
     {
