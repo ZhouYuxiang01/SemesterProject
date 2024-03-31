@@ -12,6 +12,7 @@ public class PlayerMovementControl : MonoBehaviour
     private Vector3 movement;
     private bool isRunning;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
