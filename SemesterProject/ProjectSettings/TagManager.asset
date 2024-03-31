@@ -10,8 +10,8 @@ TagManager:
   - World
   - NoMask
   - castle
-  - Weapon
   - Interactable
+  - Weapons
   layers:
   - Default
   - TransparentFX
