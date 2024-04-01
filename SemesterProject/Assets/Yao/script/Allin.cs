@@ -60,7 +60,8 @@ public class Allin : MonoBehaviour
 
     private void HandleActionInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
@@ -89,12 +90,15 @@ public class Allin : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        animator.SetTrigger("Hurt");
+        
+           currentHealth -= damage;
+           IsHit(); 
+
         if (currentHealth <= 0)
         {
-            Die();
+            Die(); 
         }
+
     }
 
     private void Attack()
@@ -102,10 +106,26 @@ public class Allin : MonoBehaviour
         animator.SetTrigger("Attack");
     }
 
+    private void IsHit()
+    {
+        animator.SetTrigger("IsHit");
+        
+    }
+
+
     private void Die()
     {
-        animator.SetTrigger("Die");
-        Debug.Log("Player died.");
-        // 此处可以添加角色死亡后的逻辑，比如禁用控制等
+        animator.SetBool("Isdead",true); // 触发死亡动画
+        //Debug.Log("Player died.");
+
+        // 这里可以添加死亡相关的逻辑
+        // 例如，禁用玩家移动和其他输入
+        this.enabled = false; // 禁用此脚本以阻止进一步的控制（可选）
+                              // 如果有PlayerMovementControl脚本也可以在这里禁用它
+        var movement = GetComponent<PlayerMovementControl>();
+        if (movement != null)
+        {
+            movement.enabled = false; // 假设有一个名为PlayerMovementControl的脚本控制玩家移动
+        }
     }
 }
