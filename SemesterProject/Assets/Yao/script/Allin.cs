@@ -14,6 +14,7 @@ public class Allin : MonoBehaviour
     private Rigidbody rb;
     private Vector3 movement;
     private bool isRunning;
+    private bool canAttack = true;
 
     void Start()
     {
@@ -103,7 +104,18 @@ public class Allin : MonoBehaviour
 
     private void Attack()
     {
-        animator.SetTrigger("Attack");
+        if (canAttack)
+        {
+            animator.SetTrigger("Attack");
+            canAttack = false; // 禁止进一步攻击
+            StartCoroutine(ResetAttackCooldown()); // 启动冷却协程
+        }
+    }
+
+    IEnumerator ResetAttackCooldown()
+    {
+        yield return new WaitForSeconds(1.0f); // 等待动画播放完成的大概时间
+        canAttack = true; // 重新允许攻击
     }
 
     private void IsHit()
@@ -115,7 +127,7 @@ public class Allin : MonoBehaviour
 
     private void Die()
     {
-        animator.SetBool("Isdead",true); // 触发死亡动画
+        animator.SetTrigger("Isdead"); // 触发死亡动画
         //Debug.Log("Player died.");
 
         // 这里可以添加死亡相关的逻辑
