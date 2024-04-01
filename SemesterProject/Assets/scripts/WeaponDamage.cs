@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
 {
-    public int damageAmount = 10; // 武器的伤害值
+    public int damageAmount = 30; // 武器的伤害值
 
     // 当武器的触发器碰到其他触发器时调用
     private void OnTriggerEnter(Collider other)
     {
         // 检查碰撞的对象是否有Enemy标签
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Weapon"))
         {
             // 尝试获取敌人的健康组件
             EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
@@ -18,6 +18,15 @@ public class WeaponDamage : MonoBehaviour
             {
                 // 对敌人造成伤害
                 enemyHealth.TakeDamage(damageAmount);
+            }
+        }
+        else if (other.CompareTag("Player"))
+        {
+            // 主角受伤逻辑
+            Allin player = other.GetComponent<Allin>();
+            if (player != null)
+            {
+                player.TakeDamage(damageAmount);
             }
         }
     }
