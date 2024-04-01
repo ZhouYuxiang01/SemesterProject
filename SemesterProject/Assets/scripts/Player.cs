@@ -66,6 +66,7 @@ public class Allin : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void Move()
     {
         float speed = isRunning ? runSpeed : walkSpeed;
@@ -80,6 +81,8 @@ public class Allin : MonoBehaviour
             rb.MoveRotation(newRotation);
         }
     }
+=======
+>>>>>>> Yao's
 
     private void UpdateAnimator()
     {
