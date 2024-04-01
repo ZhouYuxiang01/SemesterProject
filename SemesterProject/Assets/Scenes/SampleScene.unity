@@ -1236,6 +1236,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &56273862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 202521616559995603, guid: 2dfb15162102fd54192c51afa2ae72d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8373065961737205602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &58194297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485184, guid: f5e310684d533124e895f9100f7931f4,
@@ -7160,11 +7166,11 @@ Transform:
   m_GameObject: {fileID: 344252016}
   serializedVersion: 2
   m_LocalRotation: {x: 0.31877556, y: 0.13896745, z: -0.04730857, w: 0.9363932}
-  m_LocalPosition: {x: 564.30493, y: 7.8, z: 629.39954}
+  m_LocalPosition: {x: -11.118774, y: 7.8, z: -11.446045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 56273862}
   m_LocalEulerAnglesHint: {x: 37.6, y: 0, z: 0}
 --- !u!1001 &345214188
 PrefabInstance:
@@ -14919,6 +14925,24 @@ MonoBehaviour:
   runSpeed: 6
   animator: {fileID: 56273861}
   cameraTransform: {fileID: 344252019}
+--- !u!114 &652962655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652962636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6215a08fc43a2f4d8b0ab58860d78a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 56273862}
+  cameraToUse: {fileID: 344252018}
+  orbitDistance: 10
+  orbitHeight: 5
+  orbitSpeed: 90
+  lookAtOffset: {x: 0, y: 1, z: 0}
 --- !u!1001 &653891247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48131,6 +48155,10 @@ PrefabInstance:
     - {fileID: 9190217424698762836, guid: 2dfb15162102fd54192c51afa2ae72d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 202521616559995603, guid: 2dfb15162102fd54192c51afa2ae72d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344252019}
     - targetCorrespondingSourceObject: {fileID: 151291495456120108, guid: 2dfb15162102fd54192c51afa2ae72d0,
         type: 3}
       insertIndex: -1
@@ -48138,12 +48166,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5666191597506623561, guid: 2dfb15162102fd54192c51afa2ae72d0,
         type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 652962652}
     - targetCorrespondingSourceObject: {fileID: 5666191597506623561, guid: 2dfb15162102fd54192c51afa2ae72d0,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 652962641}
+    - targetCorrespondingSourceObject: {fileID: 5666191597506623561, guid: 2dfb15162102fd54192c51afa2ae72d0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652962655}
     - targetCorrespondingSourceObject: {fileID: 685762081375723625, guid: 2dfb15162102fd54192c51afa2ae72d0,
         type: 3}
       insertIndex: -1
@@ -48155,7 +48187,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 1407843604}
-  - {fileID: 344252019}
   - {fileID: 1903410462}
   - {fileID: 1762019298}
   - {fileID: 1042124895}
