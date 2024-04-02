@@ -4770,7 +4770,7 @@ GameObject:
   - component: {fileID: 156327446}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4869,12 +4869,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156327441}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.51326764, y: -0.017842814, z: 0.029810343, w: -0.8575251}
-  m_LocalPosition: {x: -0.4830109, y: 8.55, z: -5.2559896}
+  m_LocalRotation: {x: 0.51085323, y: 0.06494951, z: -0.05797691, w: 0.8552481}
+  m_LocalPosition: {x: 553.31165, y: 8.550012, z: 619.1307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 359670534}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 61.805, y: 0, z: 356.018}
 --- !u!114 &156327446
 MonoBehaviour:
@@ -4888,13 +4888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec6d74987993a1409605eb47465ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 359670534}
-  cameraToUse: {fileID: 156327444}
-  orbitDistance: 10
-  orbitHeight: 5
-  orbitSpeed: 90
-  lookAtOffset: {x: 0, y: 1, z: 0}
-  orbitAngle: 0
 --- !u!1001 &156363625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10950,7 +10943,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 867272381}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1892303555}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
@@ -26764,7 +26757,13 @@ PrefabInstance:
       propertyPath: Bindings.Array.data[0].WeaponModel
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114440265014744728, guid: cd3e925c9936b18409faf2e3b55f7e20,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114440265014744728, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1439385380164928, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
     - {fileID: 1698762950936782, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
@@ -26773,10 +26772,6 @@ PrefabInstance:
     - {fileID: 1704718460725410, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
     - {fileID: 1846937145424500, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4458120732201330, guid: cd3e925c9936b18409faf2e3b55f7e20,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 156327445}
     - targetCorrespondingSourceObject: {fileID: 4716281689117214, guid: cd3e925c9936b18409faf2e3b55f7e20,
         type: 3}
       insertIndex: -1
@@ -26785,7 +26780,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 57077967}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1210366466818188, guid: cd3e925c9936b18409faf2e3b55f7e20,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1892303572}
+    - targetCorrespondingSourceObject: {fileID: 1210366466818188, guid: cd3e925c9936b18409faf2e3b55f7e20,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1892303571}
   m_SourcePrefab: {fileID: 100100000, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
 --- !u!1001 &867537619
 PrefabInstance:
@@ -65008,6 +65011,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7360d30a05af7804195e76840febbe6e, type: 3}
+--- !u!1 &1892303555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210366466818188, guid: cd3e925c9936b18409faf2e3b55f7e20,
+    type: 3}
+  m_PrefabInstance: {fileID: 867272381}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1892303571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892303555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f130475a1d521d4fb8b13138aafdf59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 359670534}
+  cameraToUse: {fileID: 156327444}
+  orbitDistance: 10
+  orbitHeight: 5
+  orbitSpeed: 90
+  lookAtOffset: {x: 0, y: 1, z: 0}
+--- !u!114 &1892303572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892303555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b460d5f3651b095489d1f6b364a5ef5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  Movement: 0
+  InputAuthorized: 1
+  AnalogInput: 0
+  ScriptDrivenInput: 0
+  WalkSpeed: 6
+  ShouldSetMovement: 1
+  IdleThreshold: 0.05
+  Acceleration: 10
+  Deceleration: 10
+  InterpolateMovementSpeed: 0
+  WalkParticles: []
+  TouchTheGroundParticles: []
+  TouchTheGroundSfx: []
 --- !u!1001 &1892615309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71785,6 +71846,7 @@ SceneRoots:
   - {fileID: 1407843604}
   - {fileID: 260579787}
   - {fileID: 449790574}
+  - {fileID: 156327445}
   - {fileID: 867272381}
   - {fileID: 120294864}
   - {fileID: 419625913}
