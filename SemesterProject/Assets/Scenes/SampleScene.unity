@@ -70340,9 +70340,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ragdoller: {fileID: 6477856617068570502}
-  ObjectsToDisableOnDeath: []
+  ObjectsToDisableOnDeath:
+  - {fileID: 8928631778465146365}
   MonosToDisableOnDeath: []
-  ForceMultiplier: 50
+  ForceMultiplier: 1000
   RagdollButton: 0
   ResetRagdollButton: 0
 --- !u!1 &496100292749145053
@@ -70454,7 +70455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6854683937481769852}
   - component: {fileID: 7052210365196162983}
-  - component: {fileID: 6447993684782901967}
+  - component: {fileID: 7052210365196162984}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -78215,29 +78216,6 @@ MonoBehaviour:
   SlidingSpeed: 15
   SlidingSpeedControl: 0.4
   SlidingDirectionControl: 1
---- !u!136 &6447993684782901967
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741946302390386706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Height: 180
-  m_Direction: 1
-  m_Center: {x: 0, y: 90, z: 0}
 --- !u!114 &6477856617068570502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78434,7 +78412,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741946302390386706}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -78448,11 +78426,32 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7052210365196162984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741946302390386706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 180, z: 30}
+  m_Center: {x: 0, y: 90, z: 0}
 --- !u!4 &7070844498084360125
 Transform:
   m_ObjectHideFlags: 0
