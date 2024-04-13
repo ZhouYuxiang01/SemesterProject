@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class DeathScreen : MonoBehaviour
 {
-    public GameObject deathScreen; // 死亡屏幕的Panel
-    public Button restartButton; // 重新开始游戏的按钮
-    public Button quitButton; // 退出游戏的按钮
+    public GameObject gameUIPanel; // 游戏结束UI面板
+    public TMP_Text statusText; // 显示胜利或死亡消息的文本
 
     void Start()
     {
-        deathScreen.SetActive(false); // 初始时隐藏死亡屏幕
-        restartButton.onClick.AddListener(RestartGame);
-        quitButton.onClick.AddListener(QuitGame);
+        gameUIPanel.SetActive(false); // 初始时隐藏游戏结束面板
     }
 
-    public void PlayerDied()
+    public void EndGame(bool playerWon)
     {
-        deathScreen.SetActive(true); // 显示死亡屏幕
-        Time.timeScale = 0; // 停止游戏时间，禁止所有游戏内移动和操作
+        Time.timeScale = 0; // 停止游戏时间
+        gameUIPanel.SetActive(true); // 显示游戏结束面板
+        statusText.text = playerWon ? "Congratulations! You Won!" : "Game Over! You Died!";
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
         Time.timeScale = 1; // 恢复正常游戏速度
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // 重载当前场景
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
         Time.timeScale = 1; // 确保时间恢复正常，如果你的退出操作是加载另一个场景
         Application.Quit(); // 退出游戏
