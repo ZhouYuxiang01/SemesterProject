@@ -9,6 +9,7 @@ public class TIme : MonoBehaviour
     public float time = 30f;
     private float restTime;
     public Text timer;
+    private DeathScreen DeathScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class TIme : MonoBehaviour
         restTime = time - Time.deltaTime;
         if (restTime == 0)
         {
-            //win();
+            DeathScreen.EndGame(true);
         }
     }
 }

@@ -4976,7 +4976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a170f8cd95e6e44a2fba2d293bdc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameUIPanel: {fileID: 83430037}
+  gameUIPanel: {fileID: 537196456}
   statusText: {fileID: 496048821}
 --- !u!1001 &156363625
 PrefabInstance:
@@ -27028,7 +27028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458120732201330, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 554.36865
+      value: 489
       objectReference: {fileID: 0}
     - target: {fileID: 4458120732201330, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27036,7 +27036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458120732201330, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 624.3019
+      value: 453.9
       objectReference: {fileID: 0}
     - target: {fileID: 4458120732201330, guid: cd3e925c9936b18409faf2e3b55f7e20, type: 3}
       propertyPath: m_LocalRotation.w
