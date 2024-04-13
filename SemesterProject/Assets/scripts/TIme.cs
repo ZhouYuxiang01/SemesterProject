@@ -1,28 +1,51 @@
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TIme : MonoBehaviour
+public class CountdownTrigger : MonoBehaviour
 {
-
-    public float time = 30f;
-    private float restTime;
-    public Text timer;
-    private DeathScreen DeathScreen;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public float countdownTime = 30f; 
+    private float timer; // 计时器
+    private bool isCountingDown = false; 
+    public DeathScreen DeathScreen;
+    public Text timerText;
     void Update()
     {
-        restTime = time - Time.deltaTime;
-        if (restTime == 0)
+        if (isCountingDown)
         {
-            DeathScreen.EndGame(true);
+            timer += Time.deltaTime; 
+            if (timer >= countdownTime)
+            {
+                
+                DeathScreen.EndGame(true); 
+            }
+        }else {
+            timer -= Time.time;
+            if (timer < 0)
+            {
+                timer = 0;
+            }
+        }
+        timerText.text = Mathf.Floor(timer).ToString();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // 玩家进入触发区域，开始计时
+            isCountingDown = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // 玩家离开触发区域，停止并重置计时
+            isCountingDown = false;
         }
     }
 }
