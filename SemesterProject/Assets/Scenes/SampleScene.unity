@@ -10899,7 +10899,7 @@ GameObject:
   - component: {fileID: 434372871}
   - component: {fileID: 434372870}
   - component: {fileID: 434372893}
-  - component: {fileID: 434372894}
+  - component: {fileID: 434372895}
   m_Layer: 10
   m_Name: Netural
   m_TagString: Player
@@ -11185,7 +11185,7 @@ MonoBehaviour:
       - {fileID: 434372872}
     Transitions:
       array:
-      - Decision: {fileID: 434372894}
+      - Decision: {fileID: 434372895}
         TrueState: Follow
         FalseState: 
   - StateName: Follow
@@ -11751,7 +11751,7 @@ MonoBehaviour:
   Label: 
   MinimumDistance: 1
   targetObject: {fileID: 4458120976422863}
---- !u!114 &434372894
+--- !u!114 &434372895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11760,7 +11760,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 434372869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c77c71de934d5409ac7258ff688672, type: 3}
+  m_Script: {fileID: 11500000, guid: 0722aa2b50aa36e4690bdc217a920fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
