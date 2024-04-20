@@ -10,16 +10,24 @@ public class DeathScreen : MonoBehaviour
     public GameObject gameUIPanel; // 游戏结束UI面板
     public TMP_Text statusText; // 显示胜利或死亡消息的文本
 
-    void Start()
+    private void Start()
     {
-        gameUIPanel.SetActive(false); // 初始时隐藏游戏结束面板
+        gameUIPanel.SetActive(false);
     }
 
-    public void EndGame(bool playerWon)
+
+    public void ShowVictoryScreen()
     {
         Time.timeScale = 0; // 停止游戏时间
         gameUIPanel.SetActive(true); // 显示游戏结束面板
-        statusText.text = playerWon ? "Congratulations! You Won!" : "Game Over! You Died!";
+        statusText.text = "Congratulations! You Won!";
+    }
+
+    public void ShowDefeatScreen()
+    {
+        Time.timeScale = 0; // 停止游戏时间
+        gameUIPanel.SetActive(true); // 显示游戏结束面板
+        statusText.text = "Game Over! You Died!";
     }
 
     public void RestartGame()
@@ -30,7 +38,7 @@ public class DeathScreen : MonoBehaviour
 
     public void QuitGame()
     {
-        Time.timeScale = 1; // 确保时间恢复正常，如果你的退出操作是加载另一个场景
+        Time.timeScale = 1; // 确保时间恢复正常
         Application.Quit(); // 退出游戏
     }
 }
