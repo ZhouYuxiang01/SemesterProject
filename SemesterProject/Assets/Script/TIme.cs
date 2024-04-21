@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CountdownTrigger : MonoBehaviour
 {
     public float countdownTime = 30f; 
-    private float timer; // ¼ÆÊ±Æ÷
+    private float timer; 
     private bool isCountingDown = false; 
     public DeathScreen DeathScreen;
     public Text timerText;
