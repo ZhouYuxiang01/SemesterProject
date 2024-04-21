@@ -11,13 +11,11 @@ namespace MoreMountains.TopDownEngine
     [AddComponentMenu("TopDown Engine/Character/AI/Decisions/PressQ")]
     public class PressQ : AIDecision
     {
-        /// <summary>
-        /// We return true on Decide
-        /// </summary>
-        /// <returns></returns>
+        public Transform targetObject;
+        public float maxDistance = 5f;
         public override bool Decide()
         {
-            if (Input.GetKeyUp(KeyCode.Q))
+            if (Input.GetKeyUp(KeyCode.Q) && Vector3.Distance(transform.position, targetObject.position) <= maxDistance)
             {
                 return true;
             }

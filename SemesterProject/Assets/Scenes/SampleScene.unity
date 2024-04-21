@@ -11764,6 +11764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
+  targetObject: {fileID: 4458120976422863}
+  maxDistance: 10
 --- !u!1001 &435561672
 PrefabInstance:
   m_ObjectHideFlags: 0
