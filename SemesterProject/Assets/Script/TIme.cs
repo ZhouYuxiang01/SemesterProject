@@ -7,7 +7,7 @@ using TMPro;
 
 public class CountdownTrigger : MonoBehaviour
 {
-    public float countdownTime = 30f; 
+    public float countdownTime = 30f;
     private float timer; // 计时器
     private bool isCountingDown = false;
     public Canvas deathScreenCanvas; // 引用 Canvas
@@ -21,35 +21,32 @@ public class CountdownTrigger : MonoBehaviour
         {
             Debug.LogError("DeathScreen component not found on the canvas!");
         }
-        timer = countdownTime;
+        timer = countdownTime; // 初始化计时器为倒计时时间
+        timerText.enabled = false; // 开始时不显示计时器
     }
 
     void Update()
     {
         if (isCountingDown)
         {
-            timer += Time.deltaTime; 
-            if (timer >= countdownTime)
+            timer -= Time.deltaTime; // 计时器递减
+            if (timer <= 0)
             {
-
+                timer = 0; // 防止计时器出现负值
                 deathScreen.ShowVictoryScreen();
+                isCountingDown = false; // 停止计时
             }
-        }else {
-            timer -= Time.time;
-            if (timer < 0)
-            {
-                timer = 0;
-            }
+            timerText.text = Mathf.Ceil(timer).ToString(); // 更新显示的时间为整数秒
         }
-        timerText.text = Mathf.Floor(timer).ToString();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // 玩家进入触发区域，开始计时
             isCountingDown = true;
+            timerText.enabled = true; // 玩家进入触发区域，显示计时器
+            timer = countdownTime; // 重置计时器
         }
     }
 
@@ -57,8 +54,8 @@ public class CountdownTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // 玩家离开触发区域，停止并重置计时
             isCountingDown = false;
+            timerText.enabled = false; // 玩家离开触发区域，隐藏计时器
         }
     }
 }

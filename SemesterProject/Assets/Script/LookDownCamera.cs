@@ -64,13 +64,11 @@ public class LookDownCamera : MonoBehaviour
     void HideCursor()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void ShowCursor()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     void MoveCharacter()
@@ -88,6 +86,5 @@ public class LookDownCamera : MonoBehaviour
         right.Normalize();
 
         Vector3 direction = (forward * vertical + right * horizontal).normalized;
-        //characterController.Move(direction * speed * Time.deltaTime);
     }
 }
