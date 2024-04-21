@@ -9,12 +9,20 @@ public class DeathScreen : MonoBehaviour
 {
     public GameObject gameUIPanel; // 游戏结束UI面板
     public TMP_Text statusText; // 显示胜利或死亡消息的文本
+    public GameObject objectToMonitor;
 
     private void Start()
     {
         gameUIPanel.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (objectToMonitor != null && !objectToMonitor.activeInHierarchy) // 检查对象是否被禁用
+        {
+            ShowDefeatScreen();
+        }
+    }
 
     public void ShowVictoryScreen()
     {
