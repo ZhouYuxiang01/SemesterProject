@@ -965,11 +965,28 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="newValue"></param>
 		public virtual void SetHealth(float newValue)
 		{
+			//如果newValue 大于最大血量 则 = 最大血量
+			if (newValue > MaximumHealth) newValue = MaximumHealth;
 			CurrentHealth = newValue;
 			UpdateHealthBar(false);
 			HealthChangeEvent.Trigger(this, newValue);
 		}
-		
+		/// <summary>
+		/// 获取当血量
+		/// </summary>
+		/// <returns></returns>
+		public float GetHealth()
+        {
+			return CurrentHealth;
+        }
+		/// <summary>
+		/// 添加血量
+		/// </summary>
+		/// <param name="hp">添加的数值</param>
+		public void AddHealth(float hp)
+        {
+			SetHealth(CurrentHealth + hp);
+        }
 		/// <summary>
 		/// Called when the character gets health (from a stimpack for example)
 		/// </summary>
