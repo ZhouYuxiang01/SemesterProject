@@ -10,6 +10,7 @@ public class DeathScreen : MonoBehaviour
     public GameObject gameUIPanel; // 游戏结束UI面板
     public TMP_Text statusText; // 显示胜利或死亡消息的文本
     public GameObject objectToMonitor;
+    public Image winImage;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class DeathScreen : MonoBehaviour
     {
         Time.timeScale = 0; // 停止游戏时间
         gameUIPanel.SetActive(true); // 显示游戏结束面板
+        Image image = winImage;
         statusText.text = "Congratulations! You Won!";
     }
 
