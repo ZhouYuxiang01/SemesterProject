@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638501693703195415
-    m_Hash: 4108879749
+      ticks: 638503146446901324
+    m_Hash: 3969146124
   m_LockFileStatus:
     m_FilePath: D:/Game_studio_Ninja/SemesterProject/SemesterProject/Assets/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638501693866112883
-    m_Hash: 2379887837
+      ticks: 638503146446911245
+    m_Hash: 266992280
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

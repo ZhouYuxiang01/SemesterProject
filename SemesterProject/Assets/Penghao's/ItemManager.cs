@@ -6,7 +6,7 @@ using MoreMountains.TopDownEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public int healthCount = 10 ;
+    public int healthCount = 3 ;
     public Health playerHp;
     public TextMeshProUGUI healthCountUI;
     public void SetHealthCount(int healthCount)
