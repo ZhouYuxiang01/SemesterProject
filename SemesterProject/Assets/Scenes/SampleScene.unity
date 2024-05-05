@@ -4853,14 +4853,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579407131}
-  - component: {fileID: 579407132}
   m_Layer: 0
-  m_Name: 100damage_Hand
+  m_Name: 100damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &579407131
 Transform:
   m_ObjectHideFlags: 0
@@ -4877,21 +4876,6 @@ Transform:
   - {fileID: 627246323}
   m_Father: {fileID: 1258661561}
   m_LocalEulerAnglesHint: {x: -89.595, y: -0.001, z: 0.001}
---- !u!114 &579407132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579407130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d249b394a9a69242a7f06552675239f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponInWorld: {fileID: 1040660361}
-  weaponOnPlayer: {fileID: 579407130}
-  newInitialWeapon: {fileID: 0}
 --- !u!1 &588259460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,12 +5072,12 @@ GameObject:
   m_Component:
   - component: {fileID: 671044455}
   m_Layer: 10
-  m_Name: Sword
+  m_Name: 30damage
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &671044455
 Transform:
   m_ObjectHideFlags: 0
@@ -11300,15 +11284,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779472393}
-  - component: {fileID: 779472395}
-  - component: {fileID: 779472394}
   m_Layer: 23
-  m_Name: 60damage (1)
+  m_Name: 60damage
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779472393
 Transform:
   m_ObjectHideFlags: 0
@@ -11330,42 +11312,6 @@ Transform:
   - {fileID: 2003804945}
   m_Father: {fileID: 1258661561}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!65 &779472394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779472392}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 22.75, y: -40.25, z: -25.33}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &779472395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779472392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d249b394a9a69242a7f06552675239f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponInWorld: {fileID: 2009128658}
-  weaponOnPlayer: {fileID: 779472392}
-  newInitialWeapon: {fileID: 0}
 --- !u!1001 &803199548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13141,12 +13087,12 @@ GameObject:
   - component: {fileID: 1040660362}
   - component: {fileID: 1040660364}
   m_Layer: 0
-  m_Name: 100damage_Map
-  m_TagString: Untagged
+  m_Name: 100damage
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1040660362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13159,8 +13105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d249b394a9a69242a7f06552675239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInWorld: {fileID: 1040660361}
-  weaponOnPlayer: {fileID: 579407130}
   newInitialWeapon: {fileID: 114594623923584052, guid: fc9d8ec4c925c6f4d93ab0404f8cf67b,
     type: 3}
 --- !u!4 &1040660363
@@ -13172,7 +13116,7 @@ Transform:
   m_GameObject: {fileID: 1040660361}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 550.84, y: 1.754, z: 615.76}
+  m_LocalPosition: {x: 550.84, y: 0.9, z: 615.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16155,8 +16099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d249b394a9a69242a7f06552675239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInWorld: {fileID: 1377518512}
-  weaponOnPlayer: {fileID: 779472392}
   newInitialWeapon: {fileID: 114594623923584052, guid: 3192d88b3e69bd942add5c610becaf3f,
     type: 3}
 --- !u!4 &1377518515
@@ -16168,7 +16110,7 @@ Transform:
   m_GameObject: {fileID: 1377518512}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9984622, y: -0.0003972832, z: -0.05496337, w: -0.007216916}
-  m_LocalPosition: {x: 466.2, y: 1.8, z: 598.99}
+  m_LocalPosition: {x: 558.41, y: 0.8, z: 619.84}
   m_LocalScale: {x: 0.030000014, y: 0.03000003, z: 0.03000002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27954,7 +27896,7 @@ GameObject:
   - component: {fileID: 1596849546}
   - component: {fileID: 1596849545}
   m_Layer: 23
-  m_Name: Sword (1)
+  m_Name: 30damage
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27993,8 +27935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d249b394a9a69242a7f06552675239f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInWorld: {fileID: 1596849544}
-  weaponOnPlayer: {fileID: 671044454}
   newInitialWeapon: {fileID: 114594623923584052, guid: 8a7c98f7d0c526840a4f77d3cfbd1790,
     type: 3}
 --- !u!4 &1596849547
@@ -39830,12 +39770,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 519090082}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2009128658 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 191440, guid: 140cf1a85fba61749ae557e15846a4b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1997386113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2056215421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 484068, guid: 140cf1a85fba61749ae557e15846a4b2,
@@ -40772,7 +40706,6 @@ GameObject:
   - component: {fileID: 114598985542147873}
   - component: {fileID: 114507903787138541}
   - component: {fileID: 114631722972757791}
-  - component: {fileID: 114485160615390767}
   - component: {fileID: 114606806389547551}
   - component: {fileID: 114173042275312553}
   - component: {fileID: 114050731016168423}
@@ -40783,6 +40716,7 @@ GameObject:
   - component: {fileID: 143969538477982908}
   - component: {fileID: 143969538477982910}
   - component: {fileID: 143969538477982909}
+  - component: {fileID: 143969538477982911}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -40901,7 +40835,7 @@ Transform:
   m_GameObject: {fileID: 1210366159488561}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 494.8, y: 0.000011444092, z: 377.7}
+  m_LocalPosition: {x: 553.5, y: 0.000011444092, z: 615.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41182,40 +41116,6 @@ MonoBehaviour:
     CurrentDurationLeft: 0
   InvincibleWhileDashing: 0
   DashFeedback: {fileID: 0}
---- !u!114 &114485160615390767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210366159488561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a52f88e226e0c459085cd4e4a38a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  ForcedCrouch: 0
-  InputMode: 0
-  CrawlAuthorized: 1
-  CrawlSpeed: 2
-  ResizeColliderWhenCrouched: 1
-  TranslateColliderOnCrouch: 0
-  CrouchedColliderHeight: 0.6
-  ObjectsToOffset:
-  - {fileID: 1012577402369269}
-  OffsetCrouch: {x: 0, y: -0.5, z: 0}
-  OffsetCrawl: {x: 0, y: -0.1, z: 0}
-  OffsetSpeed: 10
-  InATunnel: 0
 --- !u!114 &114507903787138541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41963,6 +41863,21 @@ MonoBehaviour:
   walkClip: {fileID: 8300000, guid: 2707a35731a3d7945a8a381c1878f228, type: 3}
   rollClip: {fileID: 8300000, guid: 5055f12a06627b647be3a8b086ff7ab1, type: 3}
   jumpClip: {fileID: 8300000, guid: 4e90a93351aa9fb4ca024baf7a72c9a0, type: 3}
+--- !u!114 &143969538477982911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210366159488561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91906435c2e34044493253988f4a85ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon1: {fileID: 671044454}
+  weapon2: {fileID: 779472392}
+  weapon3: {fileID: 579407130}
 --- !u!198 &198287086352857943
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -51803,12 +51718,12 @@ SceneRoots:
   - {fileID: 1311831073}
   - {fileID: 156327445}
   - {fileID: 4458120976422863}
-  - {fileID: 1596849547}
-  - {fileID: 1377518515}
   - {fileID: 272699371}
   - {fileID: 214004697}
   - {fileID: 1960601902}
   - {fileID: 650120062}
+  - {fileID: 1596849547}
+  - {fileID: 1377518515}
   - {fileID: 1040660363}
   - {fileID: 487977619}
   - {fileID: 1652944186}
