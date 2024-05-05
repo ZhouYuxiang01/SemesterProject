@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7938982129688157277}
   - component: {fileID: 1630923946291392314}
   - component: {fileID: 2536830404593717120}
-  - component: {fileID: 8554766314756377329}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -105,20 +104,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8554766314756377329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777590010607843200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a170f8cd95e6e44a2fba2d293bdc8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameUIPanel: {fileID: 6109481644447298579}
-  statusText: {fileID: 6991551876411748326}
 --- !u!1 &4007229165286843156
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8554766314756377329}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DeathScreen, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -507,7 +492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8554766314756377329}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DeathScreen, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
