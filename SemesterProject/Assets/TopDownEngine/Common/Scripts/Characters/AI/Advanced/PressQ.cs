@@ -11,13 +11,14 @@ namespace MoreMountains.TopDownEngine
     [AddComponentMenu("TopDown Engine/Character/AI/Decisions/PressQ")]
     public class PressQ : AIDecision
     {
-        public Transform targetObject;
+        public GameObject targetObject; // 使用GameObject来代替Transform
         public float maxDistance = 5f;
         public AudioClip SoundEffect;
         public AudioSource AudioSource;
+
         public override bool Decide()
         {
-            if (Input.GetKeyUp(KeyCode.Q) && Vector3.Distance(transform.position, targetObject.position) <= maxDistance)
+            if (Input.GetKeyUp(KeyCode.Q) && targetObject != null && Vector3.Distance(transform.position, targetObject.transform.position) <= maxDistance)
             {
                 PlaySoundEffect();
                 return true;

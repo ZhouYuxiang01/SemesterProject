@@ -207,6 +207,16 @@ PrefabInstance:
       propertyPath: DamageSound
       value: 
       objectReference: {fileID: 8300000, guid: 234ad50ac4a8ed4498640ffb4890bf73, type: 3}
+    - target: {fileID: 8362881856350364813, guid: 1f976090f6cd9784381aea5073d33357,
+        type: 3}
+      propertyPath: InitialHealth
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362881856350364813, guid: 1f976090f6cd9784381aea5073d33357,
+        type: 3}
+      propertyPath: MaximumHealth
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
