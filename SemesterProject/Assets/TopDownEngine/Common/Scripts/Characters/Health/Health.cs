@@ -6,10 +6,10 @@ using MoreMountains.Feedbacks;
 
 namespace MoreMountains.TopDownEngine
 {
-	/// <summary>
-	/// An event triggered every time health values change, for other classes to listen to
-	/// </summary>
-	public struct HealthChangeEvent
+    /// <summary>
+    /// An event triggered every time health values change, for other classes to listen to
+    /// </summary>
+    public struct HealthChangeEvent
 	{
 		public Health AffectedHealth;
 		public float NewHealth;
@@ -160,8 +160,12 @@ namespace MoreMountains.TopDownEngine
 		/// if this is true, animator logs for the associated animator will be turned off to avoid potential spam
 		[Tooltip("if this is true, animator logs for the associated animator will be turned off to avoid potential spam")]
 		public bool DisableAnimatorLogs = true;
-        
-		public virtual float LastDamage { get; set; }
+
+        public AudioClip DamageSound;
+        public AudioClip DeathSound;
+        public AudioSource AudioSource;
+
+        public virtual float LastDamage { get; set; }
 		public virtual Vector3 LastDamageDirection { get; set; }
 		public virtual bool Initialized => _initialized;
 
@@ -431,7 +435,12 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			damage = ComputeDamageOutput(damage, typedDamages, true);
+            if (AudioSource != null && DamageSound != null)
+            {
+                AudioSource.PlayOneShot(DamageSound);
+            }
+
+            damage = ComputeDamageOutput(damage, typedDamages, true);
 			
 			// we decrease the character's health by the damage
 			float previousHealth = CurrentHealth;
@@ -751,8 +760,13 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-	        
-			if (_character != null)
+
+            if (AudioSource != null && DeathSound != null)
+            {
+                AudioSource.PlayOneShot(DeathSound);
+            }
+
+            if (_character != null)
 			{
 				// we set its dead state to true
 				_character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Dead);
