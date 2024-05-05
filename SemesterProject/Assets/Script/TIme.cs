@@ -13,6 +13,7 @@ public class CountdownTrigger : MonoBehaviour
     public Canvas deathScreenCanvas; // 引用 Canvas
     private DeathScreen deathScreen;
     public TextMeshProUGUI timerText;
+    public GameObject targetObject; // 特定的 GameObject
 
     void Start()
     {
@@ -42,20 +43,20 @@ public class CountdownTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject == targetObject)
         {
             isCountingDown = true;
-            timerText.enabled = true; // 玩家进入触发区域，显示计时器
+            timerText.enabled = true; // 当特定 GameObject 进入触发区域，显示计时器
             timer = countdownTime; // 重置计时器
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject == targetObject)
         {
             isCountingDown = false;
-            timerText.enabled = false; // 玩家离开触发区域，隐藏计时器
+            timerText.enabled = false; // 当特定 GameObject 离开触发区域，隐藏计时器
         }
     }
 }

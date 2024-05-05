@@ -8,7 +8,7 @@ public class LookDownCamera : MonoBehaviour
     public Camera cameraToUse; // 使用的相机
     public float orbitDistance = 10.0f; // 相机环绕距离
     public float orbitHeight = 5.0f; // 相机高度
-    public float orbitSpeed = 90.0f; // 相机环绕速度
+    public float orbitSpeed = 45.0f; // 相机环绕速度
     public Vector3 lookAtOffset = new Vector3(0, 1, 0); // 注视偏移
 
     //public float speed = 5.0f; // 角色移动速度
