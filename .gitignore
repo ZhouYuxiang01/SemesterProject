@@ -48,7 +48,6 @@ ExportedObj/
 *.VC.db
 
 
-
 # Unity3D generated file on crash reports
 sysinfo.txt
 
@@ -67,8 +66,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-#Ignore all .meta file
-.meta
-#But not source file with postfix. which is everything but a folder
-!.*.meta
