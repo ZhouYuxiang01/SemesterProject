@@ -8,7 +8,7 @@ public class PlayerAudio : MonoBehaviour
     public AudioSource actionSource;    // ·­¹öºÍ¹¥»÷µÄAudioSource
     public AudioClip walkClip;          // ×ßÂ·ÉùÒôµÄAudioClip
     public AudioClip rollClip;          // ·­¹öÉùÒôµÄAudioClip
-    public AudioClip attackClip;        // ¹¥»÷ÉùÒôµÄAudioClip
+    //public AudioClip attackClip;        // ¹¥»÷ÉùÒôµÄAudioClip
     public AudioClip jumpClip;          // ÌøÔ¾ÉùÒôµÄAudioClip
 
     private float lastAttackTime = 0;   // ÉÏÒ»´Î¹¥»÷ÉùÒô²¥·ÅµÄÊ±¼ä
@@ -20,7 +20,7 @@ public class PlayerAudio : MonoBehaviour
         HandleWalking();
         HandleRolling();
         HandleJumping();
-        HandleAttacking();
+        //HandleAttacking();
     }
 
     void HandleWalking()
@@ -50,7 +50,7 @@ public class PlayerAudio : MonoBehaviour
         {
             PlaySoundLimited(rollClip, 1f);
             canRoll = false;
-            StartCoroutine(ActionCooldown(() => canRoll = true, 1f));
+            StartCoroutine(ActionCooldown(() => canRoll = true, 0.5f));
         }
     }
 
@@ -60,18 +60,18 @@ public class PlayerAudio : MonoBehaviour
         {
             PlaySoundLimited(jumpClip, 1f);
             canJump = false;
-            StartCoroutine(ActionCooldown(() => canJump = true, 1f));
+            StartCoroutine(ActionCooldown(() => canJump = true, 0.5f));
         }
     }
 
-    void HandleAttacking()
+    /*void HandleAttacking()
     {
         if (Input.GetMouseButtonDown(0) && Time.time - lastAttackTime >= 2.0f)
         {
             actionSource.PlayOneShot(attackClip);
             lastAttackTime = Time.time;
         }
-    }
+    }*/
 
     void PlaySoundLimited(AudioClip clip, float duration)
     {
