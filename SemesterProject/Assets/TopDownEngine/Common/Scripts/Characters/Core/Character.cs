@@ -19,6 +19,7 @@ namespace MoreMountains.TopDownEngine
 	[AddComponentMenu("TopDown Engine/Character/Core/Character")] 
 	public class Character : TopDownMonoBehaviour
 	{
+		public List<GameObject> dropPrefabs = new List<GameObject>();
 		/// the possible initial facing direction for your character
 		public enum FacingDirections { West, East, North, South }
 
@@ -794,7 +795,15 @@ namespace MoreMountains.TopDownEngine
 				CharacterBrain.ResetBrain();
 			}
 		}
+		// 封装的函数，接收概率，返回true或false
+		bool CheckRandomProbability(int probability)
+		{
+			// 生成一个0到100之间的随机整数
+			int randomNumber = Random.Range(0, 101);
 
+			// 如果随机数小于或等于概率值，则返回true，否则返回false
+			return randomNumber <= probability;
+		}
 		protected virtual void OnDeath()
 		{
 			if (CharacterBrain != null)
@@ -805,8 +814,26 @@ namespace MoreMountains.TopDownEngine
 			if (MovementState.CurrentState != CharacterStates.MovementStates.FallingDownHole)
 			{
 				MovementState.ChangeState(CharacterStates.MovementStates.Idle);
-			}            
-		}
+			}
+
+			//百分之三十概率检测
+			if (CheckRandomProbability(30))
+            {
+                //从掉落物中随机选择一个物品进行掉落
+                int randomNumber = Random.Range(0, dropPrefabs.Count);
+				// Instantiate the prefab at a specified position and rotation
+				Vector3 spawnPosition = gameObject.transform.position; // Change this to your desired position
+				spawnPosition.y += 0.4f;
+				Quaternion spawnRotation = Quaternion.identity; // Default rotation
+
+
+				// Create the prefab instances
+				GameObject spawnedPrefab = Instantiate(dropPrefabs[randomNumber], spawnPosition, spawnRotation);
+
+				// Set the parent of the instantiated prefab to the root of the scene
+				spawnedPrefab.transform.SetParent(null);
+            }
+        }
 
 		protected virtual void OnHit()
 		{

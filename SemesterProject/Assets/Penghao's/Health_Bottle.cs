@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Health_Bottle : MonoBehaviour
 {
-    public ItemManager itemManager;
+    private ItemManager itemManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject tmp = GameObject.Find("ItemManager");
+        itemManager = tmp.GetComponent<ItemManager>();
     }
 
     // Update is called once per frame

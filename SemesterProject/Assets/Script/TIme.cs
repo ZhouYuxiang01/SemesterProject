@@ -41,22 +41,28 @@ public class CountdownTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == targetObject)
+        if (other.tag == "Enemy")
         {
+            isCountingDown = false;
+            timerText.text = "Clear area";
+            timerText.color = Color.red;
+        }
+        else if (other.gameObject == targetObject)
+        {
+            timerText.color = Color.white;
             isCountingDown = true;
             timerText.enabled = true; // 当特定 GameObject 进入触发区域，显示计时器
-            timer = countdownTime; // 重置计时器
         }
     }
-
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject == targetObject)
         {
             isCountingDown = false;
             timerText.enabled = false; // 当特定 GameObject 离开触发区域，隐藏计时器
+            timer = countdownTime; // 重置计时器
         }
     }
 }
