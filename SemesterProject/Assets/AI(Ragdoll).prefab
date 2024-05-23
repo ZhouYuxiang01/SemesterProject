@@ -7795,6 +7795,9 @@ MonoBehaviour:
   TargetDamageResistanceProcessor: {fileID: 0}
   TargetAnimator: {fileID: 0}
   DisableAnimatorLogs: 1
+  DamageSound: {fileID: 0}
+  DeathSound: {fileID: 0}
+  AudioSource: {fileID: 0}
 --- !u!114 &6179444339378533691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8134,7 +8137,7 @@ MonoBehaviour:
     m_Bits: 1024
   ObstacleMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   TargetCheckFrequency: 1
   CanTargetSelf: 0
   OverlapMaximum: 10
