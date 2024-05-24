@@ -17,6 +17,10 @@ public class DeathScreen : MonoBehaviour
     public GameObject victoryObject; // 在胜利时激活的GameObject
     public GameObject defeatObject; // 在失败时激活的GameObject
 
+    public AudioSource audioSource; // 用于播放音频的AudioSource组件
+    public AudioClip victoryClip; // 胜利音频片段
+    public AudioClip defeatClip; // 失败音频片段
+
     private void Start()
     {
         gameUIPanel.SetActive(false);
@@ -43,6 +47,9 @@ public class DeathScreen : MonoBehaviour
         gameUIPanel.SetActive(true); // 显示游戏结束面板
         statusText.text = "Congratulations! You Won!";
 
+        // 播放胜利音频
+        PlayAudio(victoryClip);
+
         // 激活胜利GameObject，如果它存在
         if (victoryObject != null)
             victoryObject.SetActive(true);
@@ -61,6 +68,9 @@ public class DeathScreen : MonoBehaviour
         gameUIPanel.SetActive(true); // 显示游戏结束面板
         statusText.text = "Game Over! You Died!";
 
+        // 播放失败音频
+        PlayAudio(defeatClip);
+
         // 激活失败GameObject，如果它存在
         if (defeatObject != null)
             defeatObject.SetActive(true);
@@ -73,5 +83,13 @@ public class DeathScreen : MonoBehaviour
         endGameCanvas.gameObject.SetActive(true);
     }
 
-
+    private void PlayAudio(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.Stop(); // 停止当前播放的音频
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+    }
 }

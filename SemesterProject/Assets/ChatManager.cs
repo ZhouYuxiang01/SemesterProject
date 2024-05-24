@@ -6,6 +6,8 @@ public class ChatManager : MonoBehaviour
 {
     List<string> contents = new List<string>();
     public TextMeshProUGUI textMeshPro;
+    public AudioSource audioSource; 
+    public AudioClip buttonClikc;
     int nowIndex;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class ChatManager : MonoBehaviour
         //if (gameObject.activeSelf) { 
             if (Input.GetKeyUp(KeyCode.Return))
             {
+                PlayAudio(buttonClikc);
                 //当按下了回车 下一句内容
                 //当nowindex==contents.size 则隐藏当前面板
                 nowIndex++;
@@ -50,5 +53,14 @@ public class ChatManager : MonoBehaviour
     public void Hide()
     {
         this.gameObject.SetActive(false);
+    }
+
+    private void PlayAudio(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 }

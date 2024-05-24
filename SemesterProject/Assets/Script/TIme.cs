@@ -1,9 +1,7 @@
-using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class CountdownTrigger : MonoBehaviour
 {
@@ -14,6 +12,9 @@ public class CountdownTrigger : MonoBehaviour
     private DeathScreen deathScreen;
     public TextMeshProUGUI timerText;
     public GameObject targetObject; // 特定的 GameObject
+    public AudioSource audioSource;
+    public AudioClip countdown;
+    private bool countdownAudioPlayed = false; // 用于标记音频是否已经播放
 
     void Start()
     {
@@ -45,24 +46,44 @@ public class CountdownTrigger : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
             isCountingDown = false;
             timerText.text = "Clear area";
             timerText.color = Color.red;
         }
-        else if (other.gameObject == targetObject)
+        else if (other.gameObject == targetObject && !countdownAudioPlayed)
         {
+            StartCoroutine(PlayAudioWithDelay(countdown, 1f)); // 播放音频并延迟1秒
             timerText.color = Color.white;
             isCountingDown = true;
             timerText.enabled = true; // 当特定 GameObject 进入触发区域，显示计时器
+            countdownAudioPlayed = true; // 标记音频已经播放
         }
     }
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject == targetObject)
         {
+            audioSource.Stop();
             isCountingDown = false;
             timerText.enabled = false; // 当特定 GameObject 离开触发区域，隐藏计时器
             timer = countdownTime; // 重置计时器
+            countdownAudioPlayed = false; // 重置音频播放标记
+        }
+    }
+
+    private IEnumerator PlayAudioWithDelay(AudioClip clip, float delay)
+    {
+        yield return new WaitForSeconds(delay); // 等待指定的时间
+        if (audioSource != null && clip != null)
+        {
+            audioSource.Stop(); // 停止当前播放的音频
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
 }
