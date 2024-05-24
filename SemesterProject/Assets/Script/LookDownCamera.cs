@@ -31,6 +31,7 @@ public class LookDownCamera : MonoBehaviour
     {
         HandleCameraControl();
         MoveCharacter();
+        HideCursor();
     }
 
     void HandleCameraControl()

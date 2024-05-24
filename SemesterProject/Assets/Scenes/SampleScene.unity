@@ -5241,7 +5241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &579407131
 Transform:
   m_ObjectHideFlags: 0
@@ -5255,7 +5255,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 627246323}
+  - {fileID: 627386264}
   m_Father: {fileID: 1258661561}
   m_LocalEulerAnglesHint: {x: -89.595, y: -0.001, z: 0.001}
 --- !u!1 &588259460
@@ -5361,7 +5361,7 @@ PrefabInstance:
       addedObject: {fileID: 1486845900}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9997adaf286f9b45a050f836bce2f10, type: 3}
---- !u!4 &627246323 stripped
+--- !u!4 &627386264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402282, guid: d9997adaf286f9b45a050f836bce2f10,
     type: 3}
@@ -23212,13 +23212,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486845899}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7068142, y: -0.0049920627, z: 0.7036385, w: 0.072675034}
-  m_LocalPosition: {x: -2.33921, y: -4.6760583, z: 0.49878585}
-  m_LocalScale: {x: 0.029999992, y: 0.02999999, z: 0.030000003}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.639, z: -0.005}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 627246323}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+  m_Father: {fileID: 627386264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!199 &1486845901
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -40962,7 +40962,7 @@ MonoBehaviour:
   cameraToUse: {fileID: 156327444}
   orbitDistance: 10
   orbitHeight: 5
-  orbitSpeed: 90
+  orbitSpeed: 10
   lookAtOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &1892303572
 MonoBehaviour:
