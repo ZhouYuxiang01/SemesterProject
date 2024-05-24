@@ -44154,7 +44154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSource: {fileID: 701991406}
   actionSource: {fileID: 744384455}
-  walkClip: {fileID: 8300000, guid: 2707a35731a3d7945a8a381c1878f228, type: 3}
+  walkClip: {fileID: 8300000, guid: ac15be3c21856a6408418b6f5f8a9a72, type: 3}
   rollClip: {fileID: 8300000, guid: 5055f12a06627b647be3a8b086ff7ab1, type: 3}
   jumpClip: {fileID: 8300000, guid: 4e90a93351aa9fb4ca024baf7a72c9a0, type: 3}
 --- !u!114 &143969538477982911
