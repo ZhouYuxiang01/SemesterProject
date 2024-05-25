@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a0cab851de1814bf186b265818a3836d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - menuButtonController: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - animatorFunctions: {instanceID: 0}
+  - hoverSound: {fileID: 8300000, guid: da1b160ba7e6b4bf0a40defe83b864d4, type: 3}
+  - clickSound: {fileID: 8300000, guid: b97846e4dd19d7d45ad59566637fb59d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
