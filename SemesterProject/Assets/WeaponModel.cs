@@ -31,7 +31,15 @@ public class Model : MonoBehaviour
                 weapon2.SetActive(true);
                 other.gameObject.SetActive(false);
                 break;
+            case "60damage (1)":
+                weapon2.SetActive(true);
+                other.gameObject.SetActive(false);
+                break;
             case "100damage":
+                weapon3.SetActive(true);
+                other.gameObject.SetActive(false);
+                break;
+            case "100damage (1)":
                 weapon3.SetActive(true);
                 other.gameObject.SetActive(false);
                 break;
