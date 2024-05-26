@@ -32,7 +32,7 @@ public class ReandQuit : MonoBehaviour
 
         // 确保时间恢复正常
         Time.timeScale = 1;
-        Application.Quit(); // 退出游戏
+        SceneManager.LoadScene("NewMenu");
     }
 
     private void PlayAudio(AudioClip clip)

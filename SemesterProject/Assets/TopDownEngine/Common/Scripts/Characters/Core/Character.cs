@@ -817,7 +817,7 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			//百分之三十概率检测
-			if (CheckRandomProbability(30))
+			if (CheckRandomProbability(15))
             {
                 //从掉落物中随机选择一个物品进行掉落
                 int randomNumber = Random.Range(0, dropPrefabs.Count);

@@ -2054,7 +2054,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7672211, z: -0, w: 0.6413827}
   m_LocalPosition: {x: 0.04459115, y: 0.88952756, z: 0.18422212}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2603599278088186593}
@@ -3063,7 +3063,7 @@ MonoBehaviour:
   ImmuneToKnockbackIfZeroDamage: 0
   KnockbackForceMultiplier: 1
   DestroyOnDeath: 1
-  DelayBeforeDestruction: 0.2
+  DelayBeforeDestruction: 1
   PointsWhenDestroyed: 0
   RespawnAtInitialLocation: 0
   DisableControllerOnDeath: 1
